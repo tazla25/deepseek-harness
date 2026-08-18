@@ -1,0 +1,21 @@
+{
+  "name": "@deepseek-ai/dsh-advanced-suite",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "DeepSeek Harness Advanced Innovation Suite",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "cordis": "^3.18.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "vitest": "^1.6.1"
+  }
+}
