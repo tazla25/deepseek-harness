@@ -39,3 +39,4 @@ export declare class GeneticEvolution extends Service {
     }[]): PluginDNA[];
 }
 export default GeneticEvolution;
+//# sourceMappingURL=index.d.ts.map

@@ -1,6 +1,5 @@
 import { Service } from 'cordis';
 export class GeneticEvolution extends Service {
-    // Assuming a generic plugin DNA
     population = [];
     constructor(ctx) {
         super(ctx, 'geneticEvolution', true);
@@ -11,10 +10,12 @@ export class GeneticEvolution extends Service {
             if (!outcome)
                 return;
             const fitness = this.calculateFitness(outcome);
-            if (this.population.length > 0) {
+            if (this.population && this.population.length > 0) {
                 this.population[this.population.length - 1].fitness = fitness;
             }
-            this.evolveGeneration(this.population);
+            // Keep track of the evolved generation by replacing old population with new one (keeping fitness=0 for now)
+            const evolvedDNA = this.evolveGeneration(this.population);
+            this.population = evolvedDNA.map(dna => ({ dna, fitness: 0 }));
         });
     }
     detectSpecies(workspaceFiles) {
@@ -80,3 +81,4 @@ export class GeneticEvolution extends Service {
     }
 }
 export default GeneticEvolution;
+//# sourceMappingURL=index.js.map

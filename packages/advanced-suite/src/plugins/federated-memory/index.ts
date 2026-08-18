@@ -2,7 +2,7 @@ import { Context, Service } from 'cordis'
 
 declare module 'cordis' {
   interface Events {
-    'agent/pre-step': (stepData: any) => void
+    'agent/pre-step': (_stepData: any) => void
   }
 }
 
@@ -10,11 +10,11 @@ export class FederatedMemory extends Service {
   constructor(ctx: Context) {
     super(ctx, 'federatedMemory', true)
 
-    ctx.on('session/complete', (outcome) => {
+    ctx.on('session/complete', (_outcome) => {
       // Memory sharing placeholder
     })
 
-    ctx.on('agent/pre-step', (stepData) => {
+    ctx.on('agent/pre-step', (_stepData: any) => {
       // Memory retrieval placeholder
     })
   }
@@ -40,7 +40,7 @@ export class FederatedMemory extends Service {
     // Share logic placeholder
   }
 
-  retrieveRelevant(query: string): any[] {
+  retrieveRelevant(_query: string): any[] {
     // Retrieve logic placeholder
     return []
   }

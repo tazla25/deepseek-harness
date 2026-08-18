@@ -69,10 +69,10 @@ export class SuperpositionReasoning extends Service {
       }
     }
     branches.sort((a, b) => b.score - a.score)
-    return branches[0]
+    return branches[0]!
   }
 
-  applyWinner(winner: Branch): void {
+  applyWinner(_winner: Branch): void {
     // Apply logic placeholder
   }
 

@@ -2,10 +2,10 @@ import { Service } from 'cordis';
 export class FederatedMemory extends Service {
     constructor(ctx) {
         super(ctx, 'federatedMemory', true);
-        ctx.on('session/complete', (outcome) => {
+        ctx.on('session/complete', (_outcome) => {
             // Memory sharing placeholder
         });
-        ctx.on('agent/pre-step', (stepData) => {
+        ctx.on('agent/pre-step', (_stepData) => {
             // Memory retrieval placeholder
         });
     }
@@ -27,9 +27,10 @@ export class FederatedMemory extends Service {
         }
         // Share logic placeholder
     }
-    retrieveRelevant(query) {
+    retrieveRelevant(_query) {
         // Retrieve logic placeholder
         return [];
     }
 }
 export default FederatedMemory;
+//# sourceMappingURL=index.js.map

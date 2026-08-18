@@ -42,7 +42,7 @@ export class SuperpositionReasoning extends Service {
         branches.sort((a, b) => b.score - a.score);
         return branches[0];
     }
-    applyWinner(winner) {
+    applyWinner(_winner) {
         // Apply logic placeholder
     }
     extractLessons(branch) {
@@ -50,3 +50,4 @@ export class SuperpositionReasoning extends Service {
     }
 }
 export default SuperpositionReasoning;
+//# sourceMappingURL=index.js.map

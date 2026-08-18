@@ -1,7 +1,7 @@
 import { Context, Service } from 'cordis';
 declare module 'cordis' {
     interface Events {
-        'agent/pre-step': (stepData: any) => void;
+        'agent/pre-step': (_stepData: any) => void;
     }
 }
 export declare class FederatedMemory extends Service {
@@ -9,6 +9,7 @@ export declare class FederatedMemory extends Service {
     extractMemory(data: any): any;
     addPrivacyNoise(value: number, epsilon?: number): number;
     shareToHub(memory: any): void;
-    retrieveRelevant(query: string): any[];
+    retrieveRelevant(_query: string): any[];
 }
 export default FederatedMemory;
+//# sourceMappingURL=index.d.ts.map

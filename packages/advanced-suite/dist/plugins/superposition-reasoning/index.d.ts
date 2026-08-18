@@ -29,7 +29,8 @@ export declare class SuperpositionReasoning extends Service {
     spawnBranches(count: number): Branch[];
     evaluateBranch(outcome: SimulationOutcome): number;
     collapseWavefunction(branches: Branch[]): Branch;
-    applyWinner(winner: Branch): void;
+    applyWinner(_winner: Branch): void;
     extractLessons(branch: Branch): string[];
 }
 export default SuperpositionReasoning;
+//# sourceMappingURL=index.d.ts.map
