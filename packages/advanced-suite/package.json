@@ -1,21 +1,54 @@
 {
   "name": "@deepseek-ai/dsh-advanced-suite",
-  "version": "1.0.0",
-  "type": "module",
   "description": "DeepSeek Harness Advanced Innovation Suite",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "directory": "packages/advanced-suite"
+  },
+  "type": "module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./invariant": {
+      "types": "./dist/invariant.d.ts",
+      "default": "./dist/invariant.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "tsc",
     "test": "vitest run"
   },
+  "license": "MIT",
   "dependencies": {
+    "@deepseek-ai/schemastery": "workspace:^",
     "cordis": "^3.18.1"
   },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-agent": "workspace:^",
+    "@deepseek-ai/dsh-invariants": "workspace:^",
+    "@deepseek-ai/dsh-tools": "workspace:^"
+  },
   "devDependencies": {
+    "@deepseek-ai/dsh-agent": "workspace:^",
+    "@deepseek-ai/dsh-agent-loop": "workspace:^",
+    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:^",
+    "@deepseek-ai/dsh-invariants": "workspace:^",
+    "@deepseek-ai/dsh-llm": "workspace:^",
+    "@deepseek-ai/dsh-session": "workspace:^",
+    "@deepseek-ai/dsh-tools": "workspace:^",
     "typescript": "^5.3.3",
-    "vitest": "^1.6.1"
+    "vitest": "^4.1.8",
+    "@types/node": "^20.0.0"
   }
 }
