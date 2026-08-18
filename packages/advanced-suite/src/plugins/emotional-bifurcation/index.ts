@@ -11,12 +11,12 @@ export class EmotionalBifurcation extends Service {
   constructor(ctx: Context) {
     super(ctx, 'emotionalBifurcation', true)
 
-    ctx.on('agent/pre-step', (stepData: any) => {
+    ctx.on('agent/pre-step', (_stepData: any) => {
       // Analyze emotional state and blend responses before agent acts
     })
   }
 
-  analyzeEmotionalState(input: string): EmotionalState {
+  analyzeEmotionalState(_input: string): EmotionalState {
     return {
       frustration: Math.random(),
       urgency: Math.random(),
@@ -34,11 +34,11 @@ export class EmotionalBifurcation extends Service {
     }
   }
 
-  generateLogical(input: string): string {
-    return `Logical response to: ${input}`
+  generateLogical(_input: string): string {
+    return `Logical response to: ${_input}`
   }
 
-  generateEmotional(input: string, state: EmotionalState): string {
+  generateEmotional(_input: string, state: EmotionalState): string {
     return `Emotional response based on state: ${JSON.stringify(state)}`
   }
 

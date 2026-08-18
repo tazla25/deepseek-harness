@@ -37,8 +37,8 @@ export class GeneticEvolution extends Service {
     ctx.on('session/complete', (outcome) => {
       if (!outcome) return
       const fitness = this.calculateFitness(outcome)
-      if (this.population.length > 0) {
-        this.population[this.population.length - 1].fitness = fitness
+      if (this.population && this.population.length > 0) {
+        this.population[this.population.length - 1]!.fitness = fitness
       }
 
       // Keep track of the evolved generation by replacing old population with new one (keeping fitness=0 for now)
@@ -69,8 +69,8 @@ export class GeneticEvolution extends Service {
     for (let i = 0; i < tournamentSize; i++) {
       tournament.push(population[Math.floor(Math.random() * population.length)])
     }
-    tournament.sort((a, b) => b.fitness - a.fitness)
-    return tournament[0].dna
+    tournament.sort((a, b) => b!.fitness - a!.fitness)
+    return tournament[0]!.dna
   }
 
   crossover(parentA: PluginDNA, parentB: PluginDNA): PluginDNA {
@@ -97,7 +97,7 @@ export class GeneticEvolution extends Service {
 
   evolveGeneration(population: { dna: PluginDNA, fitness: number }[]): PluginDNA[] {
     if (population.length === 0) return []
-    population.sort((a, b) => b.fitness - a.fitness)
+    population.sort((a, b) => b!.fitness - a!.fitness)
     const eliteCount = Math.max(1, Math.floor(population.length * 0.2))
     const elites = population.slice(0, eliteCount).map(p => p.dna)
 

@@ -2,11 +2,11 @@ import { Service } from 'cordis';
 export class EmotionalBifurcation extends Service {
     constructor(ctx) {
         super(ctx, 'emotionalBifurcation', true);
-        ctx.on('agent/pre-step', (stepData) => {
+        ctx.on('agent/pre-step', (_stepData) => {
             // Analyze emotional state and blend responses before agent acts
         });
     }
-    analyzeEmotionalState(input) {
+    analyzeEmotionalState(_input) {
         return {
             frustration: Math.random(),
             urgency: Math.random(),
@@ -22,10 +22,10 @@ export class EmotionalBifurcation extends Service {
             emotional
         };
     }
-    generateLogical(input) {
-        return `Logical response to: ${input}`;
+    generateLogical(_input) {
+        return `Logical response to: ${_input}`;
     }
-    generateEmotional(input, state) {
+    generateEmotional(_input, state) {
         return `Emotional response based on state: ${JSON.stringify(state)}`;
     }
     blendResponses(logical, emotional, weights) {
@@ -33,3 +33,4 @@ export class EmotionalBifurcation extends Service {
     }
 }
 export default EmotionalBifurcation;
+//# sourceMappingURL=index.js.map

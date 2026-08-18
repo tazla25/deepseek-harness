@@ -1,5 +1,6 @@
 packages:
   - vendor/*
+  - packages/*
   - packages/*/*
   # The Landlock launcher is developed with its harness consumers but keeps
   # its native build and publication scripts under native/landlock-run.

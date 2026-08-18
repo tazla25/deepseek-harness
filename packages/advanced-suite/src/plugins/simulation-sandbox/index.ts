@@ -10,7 +10,7 @@ export interface SimulationWorld {
 
 declare module 'cordis' {
   interface Context {
-    simulationSandbox: SimulationSandboxEngine
+    simulationSandboxEngine?: SimulationSandboxEngine
   }
 }
 
@@ -18,7 +18,7 @@ export class SimulationSandboxEngine extends Service {
   public activeWorlds: Map<string, SimulationWorld> = new Map()
 
   constructor(ctx: Context) {
-    super(ctx, 'simulationSandbox')
+    super(ctx, 'simulationSandboxEngine')
 
     // Register tool execution hook placeholder safely
     ;(ctx as any).on('tool/before_execute', this.handleBeforeExecute.bind(this))
