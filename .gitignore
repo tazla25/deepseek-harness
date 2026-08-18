@@ -39,3 +39,4 @@ worktrees/
 .agents/worktrees/
 .typert-*/
 /packages/advanced-suite/dist/
+/packages/advanced-suite/lib/
